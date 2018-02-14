@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blurbeachbackground"
     tools:context="com.example.shourya.weatherapp.LoginActivity">
 
     <LinearLayout
@@ -97,6 +96,7 @@
                 android:drawableStart="@drawable/ic_person_black_24dp"
                 android:drawablePadding="5dp"
                 android:hint="@string/loginscreen_email"
+                android:inputType="textEmailAddress"
                 android:textSize="18sp" />
 
             <EditText
