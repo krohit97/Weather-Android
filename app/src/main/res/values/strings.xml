@@ -8,4 +8,7 @@
     <string name="loginscreen_forgot">Forgot Password?</string>
     <string name="loginscreen_new_here">Are You New Here?</string>
     <string name="loginscreen_signup">Sign Up</string>
+    <string name="loginfailure_google">SignIn With Google: Failure</string>
+    <string name="loginsuccess_google">SignIn With Google: Success</string>
+    <string name="signout_success">Sign-Out Successful</string>
 </resources>
