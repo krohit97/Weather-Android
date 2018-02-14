@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WeatherApp</string>
+    <string name="app_name">Weather App</string>
     <string name="loginscreen_login_with_google">Login with Google</string>
     <string name="loginscreen_or">Or you can</string>
     <string name="loginscreen_email">Email</string>
@@ -7,5 +7,5 @@
     <string name="loginscreen_login">Login</string>
     <string name="loginscreen_forgot">Forgot Password?</string>
     <string name="loginscreen_new_here">Are You New Here?</string>
-    <string name="loginscreen_signup">SIGN UP</string>
+    <string name="loginscreen_signup">Sign Up</string>
 </resources>
