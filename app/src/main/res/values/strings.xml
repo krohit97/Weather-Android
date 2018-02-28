@@ -11,4 +11,20 @@
     <string name="loginfailure_google">SignIn With Google: Failure</string>
     <string name="loginsuccess_google">SignIn With Google: Success</string>
     <string name="signout_success">Sign-Out Successful</string>
+
+    <string name="nameerror">In-Valid Name</string>
+    <string name="emailerror">In-Valid Email</string>
+    <string name="passworderror">Enter Password</string>
+    <string name="mobileerror">In-Valid Mobile Number</string>
+    <string name="button_signup">Sign Up</string>
+    <string name="button_signin">Sign In</string>
+    <string name="button_submit">Submit</string>
+    <string name="register">Register</string>
+    <string name="signin">SignIn</string>
+    <string name="already_a_member">If already a user member</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_no">Enter Mobile Number</string>
+
 </resources>
