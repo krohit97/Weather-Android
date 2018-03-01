@@ -20,7 +20,7 @@
     <string name="button_signin">Sign In</string>
     <string name="button_submit">Submit</string>
     <string name="register">Register</string>
-    <string name="signin">SignIn</string>
+    <string name="login">Login</string>
     <string name="already_a_member">If already a user member</string>
     <string name="enter_name">Enter Name</string>
     <string name="enter_email">Enter Email</string>

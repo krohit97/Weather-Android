@@ -7,6 +7,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -15,13 +16,14 @@ import com.basgeekball.awesomevalidation.ValidationStyle;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
     //The view objects
-    private EditText editTextName, editTextEmail, editTextMobile,
-            editTextPassword;
+    private EditText mEditTextName, mEditTextEmail, mEditTextMobile,
+            mEditTextPassword;
 
-    private Button buttonSubmit;
+    private Button mButtonRegister;
+    private TextView mButtonLogin;
 
     //defining AwesomeValidation object
-    private AwesomeValidation awesomeValidation;
+    private AwesomeValidation mAwesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,42 +31,38 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         //initializing awesomevalidation object
-        /*
-        * The library provides 3 types of validation
-        * BASIC
-        * COLORATION
-        * UNDERLABEL
-        * */
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        mAwesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         //initializing view objects
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        editTextMobile = (EditText) findViewById(R.id.editTextMobile);
+        mEditTextName = (EditText) findViewById(R.id.editTextName);
+        mEditTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        mEditTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        mEditTextMobile = (EditText) findViewById(R.id.editTextMobile);
 
-        buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
-
+        mButtonRegister = (Button) findViewById(R.id.buttonRegister);
+        mButtonLogin = (TextView) findViewById(R.id.buttonLogin);
 
         //adding validation to edittexts
-        awesomeValidation.addValidation(this, R.id.editTextName, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.editTextEmail, Patterns.EMAIL_ADDRESS, R.string.emailerror);
-        awesomeValidation.addValidation(this, R.id.editTextPassword, "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$", R.string.passworderror);
-        awesomeValidation.addValidation(this, R.id.editTextMobile, "^[2-9]{2}[0-9]{8}$", R.string.mobileerror);
+        mAwesomeValidation.addValidation(this, R.id.editTextName, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
+        mAwesomeValidation.addValidation(this, R.id.editTextEmail, Patterns.EMAIL_ADDRESS, R.string.emailerror);
+        mAwesomeValidation.addValidation(this, R.id.editTextPassword, "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$", R.string.passworderror);
+        mAwesomeValidation.addValidation(this, R.id.editTextMobile, "^[2-9]{2}[0-9]{8}$", R.string.mobileerror);
 
 
 
-        buttonSubmit.setOnClickListener(this);
+        mButtonRegister.setOnClickListener(this);
     }
 
     private void submitForm() {
         //first validate the form then move ahead
         //if this becomes true that means validation is successfull
-        if (awesomeValidation.validate()) {
+        if (mAwesomeValidation.validate()) {
+            //show toast if successful submit
             Toast.makeText(this, "Registration Successfull", Toast.LENGTH_LONG).show();
 
-//            Intent main_intent = new Intent(this, MainActivity.class);
-//            startActivity(main_intent);
+            //go to login activity if successful registration
+            Intent login_intent = new Intent(this, LoginActivity.class);
+            startActivity(login_intent);
 
             //process the data further
         }
@@ -72,8 +70,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        if (view == buttonSubmit) {
+        if (view == mButtonRegister) {
             submitForm();
+        }
+        if(view == mButtonLogin) {
+            //go to login activity
+            Intent login_intent = new Intent(this, LoginActivity.class);
+            startActivity(login_intent);
         }
     }
 }
